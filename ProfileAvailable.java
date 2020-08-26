@@ -11,6 +11,7 @@ public class ProfileAvailable {
 		ReusableMethods.takeiSkillourl(driver);
 		ReusableMethods.findLogin(driver);
 		Login.successfullLogin(driver, "GolemPustinqk", "pustinqkGOLEM123");
+		ReusableMethods.findProfileLink(driver);
 		ReusableMethods.ownprofileAvailable(driver);
 	}
 
