@@ -40,6 +40,25 @@ public class ReusableMethods {
 			assertTrue(displayed);
 			
 		}
+		public static void inputSearchField(WebDriver driver, String sometext) {
+			WebElement searchFieldInput = driver.findElement(By.id("search-bar"));
+			searchFieldInput.sendKeys(sometext);
+		}
+		
+		public static void input_SpaceKey_SearchField(WebDriver driver) {
+			WebElement inputSpace = driver.findElement(By.id("search-bar"));
+			inputSpace.sendKeys(Keys.SPACE);
+		}
+		
+		public static void findDropdownSearch(WebDriver driver) {
+			WebElement findDropdown = driver.findElement(By.xpath("//div[@class='dropdown-container']//a[contains(text(),'Georgi_Stankov')]"));
+			boolean displayed = findDropdown.isDisplayed();
+			assertTrue(displayed);
+		}
+		
+		
+		
+		
 		public static void findRegister(WebDriver driver) {
 			WebElement registerLink = driver.findElement(By.xpath("//a[contains(text(),'Register')]"));
 			registerLink.click();
@@ -66,12 +85,26 @@ public class ReusableMethods {
 			boolean displayed = listofUsers.isDisplayed();
 			assertTrue(displayed);
 		}
+		
+		
+		public static void findImage_listofavailableUsers(WebDriver driver) {
+			WebElement findImage = driver.findElement(By.xpath("(//app-small-user-profile//div//img)[1]"));
+			findImage.click();
+		}
+		
+		
 		public static void logoutfromSite(WebDriver driver) {
 			WebElement buttonLogOut = driver.findElement(By.xpath("//i[@class='fas fa-sign-out-alt fa-lg']"));
 			//driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
 			buttonLogOut.click();
 		
 		}
+		public static void findProfileLink(WebDriver driver) {
+			WebElement profileLink = driver.findElement(By.xpath("//a[@id='nav-link-profile']"));
+			boolean displayed = profileLink.isDisplayed();
+			assertTrue(displayed);
+		}
+		
 		public static void ownprofileAvailable(WebDriver driver) {
 			WebElement buttonProfile = driver.findElement(By.xpath("//a[@id='nav-link-profile']"));
 			buttonProfile.click();
@@ -79,6 +112,11 @@ public class ReusableMethods {
 		public static void findbuttonNewPost(WebDriver driver) {
 			WebElement buttonNewPost = driver.findElement(By.xpath("//i[@class='far fa-plus-square fa-lg']"));
 			buttonNewPost.click();
+		}
+		public static void locatebuttonNewPost(WebDriver driver) {
+			WebElement buttonNewPost = driver.findElement(By.xpath("//i[@class='far fa-plus-square fa-lg']"));
+			boolean displayed = buttonNewPost.isDisplayed();
+			assertTrue(displayed);
 		}
 	
 		public static void findUpload(WebDriver driver) {
@@ -114,6 +152,12 @@ public class ReusableMethods {
 			WebElement findpostImage = driver.findElement(By.xpath("(//app-post-detail//div[@class='post-feed-img']//img)[1]"));
 			findpostImage.click();
 		}
+		// to find and click image-avatar of other users
+		public static void find_profile_image_post(WebDriver driver) {
+			WebElement findProfileImage = driver.findElement(By.xpath("(//app-post-detail//div[@class='col-6 post-profile-img']//img)[1]"));
+			findProfileImage.click();
+		}
+		
 		//find if there is comment field
 		public static void commentFormDisplayed(WebDriver driver) {
 			WebElement findCommentForm = driver.findElement(By.tagName("app-comment-form"));
@@ -127,4 +171,15 @@ public class ReusableMethods {
 			findCommentField.sendKeys(Keys.ENTER);
 			
 		}
+		//find button like
+		public static void findLikeButton(WebDriver driver) {
+			WebElement buttonLike = driver.findElement(By.xpath("//div[@class='col-12 post-info']//i[@class='no-pointer like far fa-heart fa-2x ng-star-inserted']"));
+			boolean displayed = buttonLike.isDisplayed();
+			assertTrue(displayed);
+			
+			//i[@class='like far fa-heart fa-2x ng-star-inserted']
+			//i[@class='no-pointer like far fa-heart fa-2x ng-star-inserted']
+		}
+		
+		
 }
