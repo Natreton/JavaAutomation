@@ -25,5 +25,8 @@ public class LocalisationMethods {
 					assertTrue(displayed);
 				}
 				
-				
+				public static void find_singinButton(WebDriver driver) {
+					WebElement findSignIn = driver.findElement(By.xpath("//button[@id='sign-in-button']"));
+					findSignIn.click();
+				}
 }
