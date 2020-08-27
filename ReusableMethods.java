@@ -1,5 +1,6 @@
 package webdriver;
 
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -104,6 +105,7 @@ public class ReusableMethods {
 			boolean displayed = profileLink.isDisplayed();
 			assertTrue(displayed);
 		}
+		
 		
 		public static void ownprofileAvailable(WebDriver driver) {
 			WebElement buttonProfile = driver.findElement(By.xpath("//a[@id='nav-link-profile']"));
